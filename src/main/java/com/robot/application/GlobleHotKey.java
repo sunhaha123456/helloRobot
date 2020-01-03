@@ -26,6 +26,8 @@ public class GlobleHotKey extends JFrame {
         this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        1
+
         msgBtn = new JButton("弹出框（Alt+S）");
         msgBtn.setMargin(new Insets(0,0,0,0));
         msgBtn.setFocusable(false);
