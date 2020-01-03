@@ -59,7 +59,6 @@ public class GlobleHotKey extends JFrame {
             @Override
             public void onHotKey(int markCode) {
                 switch (markCode) {
-                    case 2:
                     case HOT_KEY_MARK_1:
                         showMessage();
                         break;

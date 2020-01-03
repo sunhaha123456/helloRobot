@@ -32,7 +32,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix></classpathPrefix>
-							<mainClass>com.robot.application.BaiDuSearch</mainClass>
+							<mainClass>com.robot.application.KuaiShou</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

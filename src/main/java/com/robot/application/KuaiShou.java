@@ -3,31 +3,27 @@ package com.robot.application;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Random;
 
-/**
- * 描述：百度自动搜索
- * @author sunpeng
- */
-public class BaiDuSearch extends JDialog {
+public class KuaiShou extends JDialog {
 
     private JButton ok;
 
     private Toolkit tk=this.getToolkit();
     private Dimension screen = tk.getScreenSize();
 
-    private int width = 163;
+    private int width = 260;
     private int height = 86;
 
     private Robot robot;
 
     public static void main(String[] args) throws AWTException {
-        new BaiDuSearch(args);
+        new KuaiShou(args);
     }
 
-    public BaiDuSearch(String[] args) throws AWTException {
+    public KuaiShou(String[] args) throws AWTException {
         robot = new Robot();
 
         this.setLayout(null);
@@ -44,22 +40,30 @@ public class BaiDuSearch extends JDialog {
         ok.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                baiduSearchScript();
+                while (true) {
+                    try {
+                        kuaiShouScript();
+                        int interTime = getRandom(7, 15);
+                        Thread.sleep(interTime);
+                    } catch (Exception e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
         });
     }
 
-    public void baiduSearchScript(){
+    public void kuaiShouScript(){
         try {
-                robot.mouseMove(60, 20);
+                robot.mouseMove(200, 15);
                 click();
-                robot.delay(500);
-                robot.mouseMove(170, 125);
+                robot.mouseMove(200, 545);
+                robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                robot.mouseMove(200, 0);
+                robot.mouseRelease(InputEvent.BUTTON1_MASK);
+                robot.delay(2000);
+                robot.mouseMove(200, 545);
                 click();
-                allChose();
-                paste();
-                enter();
-                robot.mouseMove(453, 221);
         } catch (Exception e) {
             System.out.println("kuaiShouScript error：" + e);
         }
@@ -70,22 +74,7 @@ public class BaiDuSearch extends JDialog {
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
     }
 
-    private void allChose() {
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_A);
-        robot.keyRelease(KeyEvent.VK_A);
-        robot.keyRelease(KeyEvent.VK_CONTROL);
-    }
-
-    private void paste() {
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_V);
-        robot.keyRelease(KeyEvent.VK_V);
-        robot.keyRelease(KeyEvent.VK_CONTROL);
-    }
-
-    private void enter() {
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+    private int getRandom(int startSecond, int endSecond) {
+        return new Random().nextInt(endSecond * 1000 - startSecond * 1000) + startSecond * 1000;
     }
 }

@@ -93,7 +93,7 @@ public class ImageRecogn extends JDialog {
                 System.out.println("未获取到内容！");
             }
         } catch (Exception e) {
-            System.out.println("baiduSearchScript error：" + e);
+            System.out.println("kuaiShouScript error：" + e);
         }
     }
 
