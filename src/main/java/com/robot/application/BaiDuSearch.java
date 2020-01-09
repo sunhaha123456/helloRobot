@@ -51,15 +51,15 @@ public class BaiDuSearch extends JDialog {
 
     public void baiduSearchScript(){
         try {
-                robot.mouseMove(60, 20);
-                click();
-                robot.delay(500);
-                robot.mouseMove(170, 125);
-                click();
-                allChose();
-                paste();
-                enter();
-                robot.mouseMove(453, 221);
+            robot.mouseMove(60, 20);
+            click();
+            robot.delay(500);
+            robot.mouseMove(170, 125);
+            click();
+            allChose();
+            paste();
+            enter();
+            robot.mouseMove(453, 221);
         } catch (Exception e) {
             System.out.println("kuaiShouScript error：" + e);
         }

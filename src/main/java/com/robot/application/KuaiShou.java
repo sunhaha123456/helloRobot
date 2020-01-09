@@ -49,18 +49,18 @@ public class KuaiShou extends JDialog {
 
     public void kuaiShouScript(){
         try {
-                int interTime = getRandom(6, 8);
-                Thread.sleep(interTime);
-                robot.mouseMove(200, 15);
-                click();
-                robot.mouseMove(200, 550);
-                robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-                robot.mouseMove(200, 400);
-                robot.mouseRelease(InputEvent.BUTTON1_MASK);
-                robot.mouseMove(200, 350);
-                robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-                robot.mouseMove(200, 200);
-                robot.mouseRelease(InputEvent.BUTTON1_MASK);
+            int interTime = getRandom(6, 8);
+            Thread.sleep(interTime);
+            robot.mouseMove(200, 15);
+            click();
+            robot.mouseMove(200, 550);
+            robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robot.mouseMove(200, 400);
+            robot.mouseRelease(InputEvent.BUTTON1_MASK);
+            robot.mouseMove(200, 350);
+            robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robot.mouseMove(200, 200);
+            robot.mouseRelease(InputEvent.BUTTON1_MASK);
         } catch (Exception e) {
             System.out.println("kuaiShouScript error：" + e);
         }
